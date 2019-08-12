@@ -1,0 +1,2 @@
+# SA_Tarea2_201213177
+Repositorio el cual aloja la Tarea No. 2 del laboratorio del curso de Software Avanzado.  La tarea consiste en realizar una aplicación SOA para simular los siguientes servicios de carros tipo Uber:  1. Solicitud de servicio por parte del cliente 2. Recepción de solicitud y aviso al piloto 3. Solicitud de ubicación (rastreo) desde la administración del servicio de carros  Debe ser realizado con servicios orquestados por medio de un ESB
