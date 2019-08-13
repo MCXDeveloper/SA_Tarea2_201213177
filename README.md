@@ -61,8 +61,8 @@ id = #numero_que_corresponde_a_un_cliente
 coor_x = #numero_entero_aleatorio
 coor_y = #numero_entero_aleatorio
 ```
-
 Al ejecutar el URL anterior con un tipo de llamada GET se puede observar todo el funcionamiento de orquestación del ESB para comunicarse con los microservicios que son los que actualmente alojan en un arreglo los usuarios y pilotos correspondientes.
+
 License
 ----
 
