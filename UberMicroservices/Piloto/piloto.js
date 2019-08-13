@@ -33,13 +33,16 @@ const listaPilotos = [
     }
 ];
 
-app.get('/piloto/**', (req, res) => {
+app.get('/piloto', (req, res) => {
 
-    const pilotoId = parseInt(req.params[0]);
-    const pilotoEncontrado = listaPilotos.find(subject => subject.id === clienteId);
+    const coor_x = parseInt(req.query['coor_x']);
+    const coor_y = parseInt(req.query['coor_y']);
+    const pilotoEncontrado = listaPilotos.find(function(element) {
+        return (element.busy == false && element.location[0] == coor_x && element.location[1] == coor_y);
+    });
 
     if (pilotoEncontrado) {
-        res.status(202).header({Location: `http://localhost:${port}/piloto/${pilotoEncontrado.id}`}).send(pilotoEncontrado);
+        res.status(202).json(pilotoEncontrado);
     } else {
         console.log(`Piloto no encontrado.`);
         res.status(404).send();

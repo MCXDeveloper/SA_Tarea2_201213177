@@ -25,9 +25,9 @@ const listaClientes = [
     }
 ];
 
-app.get('/cliente/**', (req, res) => {
+app.get('/cliente', (req, res) => {
 
-    const clienteId = parseInt(req.params[0]);
+    const clienteId = parseInt(req.query['id']);
     const clienteEncontrado = listaClientes.find(subject => subject.id === clienteId);
 
     if (clienteEncontrado) {

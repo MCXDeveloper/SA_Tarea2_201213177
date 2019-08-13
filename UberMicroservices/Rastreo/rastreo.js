@@ -8,15 +8,16 @@ app.use(bodyParser.json());
 
 app.get('/rastreador', (req, res) => {
 
-    const clienteId = parseInt(req.params[0]);
-    const clienteEncontrado = listaClientes.find(subject => subject.id === clienteId);
+    const clienteId = parseInt(req.query['id_cliente']);
+    const pilotoId = parseInt(req.query['id_piloto']);
+    const nombrePiloto = req.query['nombre_piloto'];
 
-    if (clienteEncontrado) {
-        res.status(202).header({Location: `http://localhost:${port}/cliente/${clienteEncontrado.id}`}).send(clienteEncontrado);
-    } else {
-        console.log(`Cliente no encontrado.`);
-        res.status(404).send();
-    }
+    const response = {
+        status: 'Correct!',
+        message: 'Asignación de viaje realizada correctamente.  Su piloto es: ' + nombrePiloto
+    };
+
+    res.status(202).json(response);
 
 });
 
